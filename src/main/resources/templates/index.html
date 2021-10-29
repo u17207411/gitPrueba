@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Inicio</h1>
+        <a th:href="@{/agregar}">Crear Categoria</a>
+        <div th:if="${categorias != null and !categorias.empty}">
+            <table border="1">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                </tr>
+                <tr th:each="categoria : ${categorias}">
+                    <td th:text="${categoria.nombrecategoria}">Mostrar Nombre</td>
+                </tr>
+            </table>
+        </div>
+        <div th:if="${categorias == null or categorias.empty}">
+            La lista de personas está vacía
+        </div>
+        
+    </body>
+</html>
