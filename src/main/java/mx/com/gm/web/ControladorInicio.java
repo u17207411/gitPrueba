@@ -21,7 +21,7 @@ public class ControladorInicio {
         var categorias = categoriaService.listarCategorias();
         log.info("ejecutando el controlador Spring MVC");
         model.addAttribute("categorias", categorias);
-        return "index";
+        return "indexPersona";
     }
     
     @GetMapping("/agregar")
